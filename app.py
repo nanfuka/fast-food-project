@@ -61,6 +61,11 @@ def register_user():
     else:
         return jsonify(create_request_fail)
 
+#final get all orders   
+@app.route('/api/v1/orders', methods=['GET'])
+@data_store.token_required
+def place_new_order(current_user):
+        return jsonify(data_store.getAllOrdersForUser(current_user.getUserName()))
 
 
 #Update the status of an order
