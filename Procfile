@@ -1,3 +1,3 @@
-web: gunicorn run:app
+web: gunicorn app:app
 python_version = "3.6.5"
 pip install -r requirements.txt
