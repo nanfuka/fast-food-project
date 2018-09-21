@@ -127,4 +127,4 @@ def api_gejt_sepecific_order(current_user,orderId):
         return jsonify(request_fail)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
