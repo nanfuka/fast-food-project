@@ -8,7 +8,7 @@ import jwt
 
 app = Flask(__name__)
 
-temp_orders =[OrderRequest("bacon","fresh","3","Deb")]
+temp_orders =[ OrderRequest("bacjjon","frehsh","36","Deb"),  OrderRequest("bacon","fresh","3","Deb")]
 temp_users=[User("Nsubuga","Kalungiowak","llkldf@gmail.com","Deb","boosiko",True)]
 data_store = DataStore(temp_users,temp_orders)
 
@@ -91,6 +91,8 @@ def api_modifys_request(current_user,requestId):
     else:
         return jsonify(create_request_fail)
 
+
+
 #function to place a new order
 @app.route('/api/v1/orders', methods=['POST'])
 @data_store.token_required
@@ -103,10 +105,12 @@ def api_create_orders(current_user):
    
     if foodorder is not None and description is not None and quantity is not None:
         req = OrderRequest(foodorder,description,quantity,current_user.getUserName())
-        create_request_successful=data_store.addOrders(req).getDictionary()
+        create_request_successful['data']=data_store.addOrders(req).getDictionary()
         return jsonify(create_request_successful)
     else:
         return jsonify(create_request_fail)
+
+
 
 #get specific order
 @app.route('/api/v1/orders/<orderId>', methods=['GET'])

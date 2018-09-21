@@ -5,7 +5,7 @@ registration_successful={
         }
 login_successful={
         'success':True,
-        'message':"Logined in Succesfully.",
+        'message':"Logedin Succesfully.",
         }
 login_fail={
         'success':False,
@@ -27,4 +27,4 @@ create_request_successful={
         'success':True,
         'message':"Your request was submitted successfully.",
         }
-requests = [{'id': 20003,'title': u'Range Rover','type': u'Repair','category': u'Cars','status':u'Completed'},{'id': 20004,'title': u'Samsung S7','type': u'Repair','category': u'Phones and Tablet','status':u'In Progress'}]
+requests = [{'orderId':'2004', 'foodorder': 'bacBHHHon',u'description': u'fresh','quantity':'3'}]
