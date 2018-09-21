@@ -19,15 +19,6 @@ class DataStore:
 		self.users.append(user)
 		return user
 
-	#Methods handling CRUD operations for Requests
-	def modifyRequest(self, user_request):
-		i=0
-		for req in self.requests:
-			if req.getId() == user_request.getId():
-				self.requests[i]=user_request
-				return user_request.getDictionary()
-			i=i+1
-		return None
 
 	def updateOrder(self, order):
 		i=0
